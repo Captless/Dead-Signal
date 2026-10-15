@@ -1,0 +1,6 @@
+import { describe, expect, it } from 'vitest';import { mkCrates, resetCrates, holdUse, CRATE_CHARGES, CRATE_HOLD } from '../src/world/crates';
+describe('crates',()=>{it('fill after hold threshold, decrements',()=>{const [c]=mkCrates([{x:0,z:0}]);const p={t:0};expect(holdUse(c,true,CRATE_HOLD/2,p)).toBe(null);expect(holdUse(c,true,CRATE_HOLD/2,p)).toBe('fill');expect(c.charges).toBe(CRATE_CHARGES-1);});
+it('tap resets progress',()=>{const [c]=mkCrates([{x:0,z:0}]);const p={t:0};holdUse(c,true,0.1,p);holdUse(c,false,0.1,p);expect(p.t).toBe(0);expect(c.charges).toBe(CRATE_CHARGES);});
+it('depleted gives empty, reset restores',()=>{const [c]=mkCrates([{x:0,z:0}]);c.charges=0;const p={t:0};expect(holdUse(c,true,1,p)).toBe('empty');resetCrates([c]);expect(c.charges).toBe(CRATE_CHARGES);});
+it('latch: held E gives one fill until release',()=>{const [c]=mkCrates([{x:0,z:0}]);const p={t:0,ok:true};expect(holdUse(c,true,CRATE_HOLD,p,p)).toBe('fill');expect(holdUse(c,true,CRATE_HOLD,p,p)).toBe(null);expect(c.charges).toBe(CRATE_CHARGES-1);holdUse(c,false,0.1,p,p);expect(holdUse(c,true,CRATE_HOLD,p,p)).toBe('fill');expect(c.charges).toBe(CRATE_CHARGES-2);});
+it('no latch without edge param (legacy)',()=>{const [c]=mkCrates([{x:0,z:0}]);const p={t:0};expect(holdUse(c,true,CRATE_HOLD,p)).toBe('fill');expect(holdUse(c,true,CRATE_HOLD,p)).toBe('fill');});});

@@ -1,0 +1,1 @@
+import * as T from 'three';export function disp(o:T.Object3D){o.traverse(c=>{const m=c as T.Mesh;if(m.geometry)m.geometry.dispose();});}

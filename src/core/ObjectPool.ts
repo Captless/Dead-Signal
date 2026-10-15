@@ -1,0 +1,1 @@
+export class Pool<T>{private f:T[]=[];constructor(private mk:()=>T,private rs:(o:T)=>void,private n=32){for(let i=0;i<n;i++)this.f.push(mk());}get(){return this.f.pop()??this.mk();}put(o:T){this.rs(o);if(this.f.length<this.n*2)this.f.push(o);}}

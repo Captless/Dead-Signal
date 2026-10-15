@@ -1,0 +1,2 @@
+export const PRICE={shotgun:450,smg:700,rifle:950,heavy:600,rapid:900,marksman:1200,lmg:1400,heal:75,ammo:100};
+export interface PD{cost:string|number;desc:string}export const PERKS:Record<string,{cost:number;desc:string}>={dressing:{cost:300,desc:'+25 max HP'},hands:{cost:350,desc:'-25% spread/recoil'},scav:{cost:400,desc:'+15% scrap'}};

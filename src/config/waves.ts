@@ -1,0 +1,3 @@
+export type WC=Record<string,number>;export const CAP=20;
+export function comp(w:number):WC{if(w<=1)return{drifter:5};if(w===2)return{drifter:8};if(w===3)return{drifter:8,rusher:3,runner:2};if(w===4)return{drifter:10,rusher:4,runner:3};if(w===5)return{drifter:10,rusher:4,runner:3,brute:1};if(w===6)return{drifter:12,rusher:5,runner:4,brute:1,crusher:1};if(w===7)return{drifter:12,rusher:6,runner:4,brute:2,crusher:1,stalker:2};const g=Math.min(w-7,8);return{drifter:12+g,rusher:6+Math.floor(g/2),runner:4+Math.floor(g/2),brute:2+Math.floor(g/3),crusher:1+Math.floor(g/4),stalker:2+Math.floor(g/3)};}
+export const waveReward=(w:number)=>40+w*10;

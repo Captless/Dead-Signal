@@ -1,0 +1,6 @@
+import { describe, expect, it } from 'vitest';import { Nav } from '../src/core/NavigationGrid';import { street } from '../src/world/StreetBuilder';
+describe('street',()=>{
+it('every collider matches a registered solid (no invisible walls)',()=>{const s=street();expect(s.cw.boxes.length).toBe(s.solids.length);for(const r of s.solids){const hit=s.cw.boxes.some(b=>b.minX===r.x-r.w/2&&b.minZ===r.z-r.d/2&&b.maxX===r.x+r.w/2&&b.maxZ===r.z+r.d/2);expect(hit).toBe(true);}});
+it('every wall mesh sits on its collider',()=>{const s=street();expect(s.walls.length).toBeGreaterThan(20);for(const w of s.walls){const inside=s.cw.boxes.some(b=>w.position.x>=b.minX-0.01&&w.position.x<=b.maxX+0.01&&w.position.z>=b.minZ-0.01&&w.position.z<=b.maxZ+0.01);expect(inside).toBe(true);}});
+it('spawns and crates are sane',()=>{const s=street();const nav=new Nav(s.cw,s.nav.x0,s.nav.z0,1,s.nav.nx,s.nav.nz);for(const p of s.spawns)expect(nav.free(p.x,p.z)).toBe(true);expect(s.crates.length).toBe(2);for(const c of s.crates){expect(Math.abs(c.x)).toBeLessThan(6);expect(nav.free(c.x+1.6,c.z)).toBe(true);}});
+it('real-light budget capped (3 street points)',()=>{const s=street();let n=0;s.group.traverse(o=>{if((o as {isPointLight?:boolean}).isPointLight)n++;});expect(n).toBeLessThanOrEqual(3);});});

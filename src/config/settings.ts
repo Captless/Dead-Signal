@@ -1,0 +1,6 @@
+export interface Sfx{vol:number;master:number;music:number;sens:number;invert:boolean;fov:number;shake:boolean;bob:boolean;flashes:boolean;preset:0|1|2;reticle:number;bright:number;showFps:boolean}
+export const DEF:Sfx={vol:0.8,master:0.8,music:0.5,sens:0.0023,invert:false,fov:80,shake:true,bob:true,flashes:true,preset:1,reticle:1,bright:1.35,showFps:true};
+export const clampS=(s:Partial<Sfx>):Sfx=>({vol:cx(s.vol,0,1,DEF.vol),master:cx(s.master,0,1,DEF.master),music:cx(s.music,0,1,DEF.music),sens:cx(s.sens,0.0005,0.01,DEF.sens),invert:!!s.invert,fov:Math.round(cx(s.fov,60,100,DEF.fov)),shake:s.shake!==false,bob:s.bob!==false,flashes:s.flashes!==false,preset:([0,1,2].includes(s.preset as number)?s.preset:1) as 0|1|2,reticle:Math.round(cx(s.reticle,0,2,DEF.reticle)),bright:cx(s.bright,0.6,2.2,DEF.bright),showFps:s.showFps!==false});
+function cx(v:number|undefined,a:number,b:number,d:number){return v==null||isNaN(v)?d:Math.min(b,Math.max(a,v));}
+export const load=():Sfx=>{try{const r=localStorage.getItem('ds-settings');if(r)return clampS(JSON.parse(r));}catch{}return{...DEF};};
+export const save=(s:Sfx)=>{try{localStorage.setItem('ds-settings',JSON.stringify(s));}catch{}};

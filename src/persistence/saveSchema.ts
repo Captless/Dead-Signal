@@ -1,0 +1,4 @@
+export const SCHEMA_V=1;export interface Recs{best:number;kills:number;time:number}
+export const defRec=():Recs=>({best:0,kills:0,time:0});
+export function validRec(r:unknown):Recs{const d=defRec();if(!r||typeof r!=='object')return d;const o=r as Record<string,unknown>;const n=(v:unknown)=>typeof v==='number'&&isFinite(v)?Math.max(0,Math.floor(v)):0;return{best:n(o.best),kills:n(o.kills),time:n(o.time)};}
+export function migrate(raw:string|null):{v:number;rec:Recs}{if(!raw)return{v:SCHEMA_V,rec:defRec()};try{const p=JSON.parse(raw);if(p&&typeof p==='object'&&'best' in p)return{v:typeof p.v==='number'?p.v:0,rec:validRec(p)};if(p&&typeof p==='object'&&'bestWave' in p)return{v:0,rec:validRec({best:p.bestWave,kills:p.kills,time:p.time})};}catch{}return{v:SCHEMA_V,rec:defRec()};}

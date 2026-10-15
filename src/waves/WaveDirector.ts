@@ -1,0 +1,7 @@
+import { comp, CAP } from '../config/waves';export type WE={type:'spawn',kind:string}|{type:'waveClear',wave:number}|{type:'intermission',t:number};
+export class WD2{wave=0;queue:string[]=[];total=0;inter=0;readonly gap=Infinity;clearPaid=false;
+start(n:number){this.wave=n;this.clearPaid=false;const c=comp(n);this.queue=[];const heavy:string[]=[],rest:string[]=[];for(const k of Object.keys(c))for(let i=0;i<c[k];i++)(k==='brute'||k==='crusher'?heavy:rest).push(k);for(let i=rest.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[rest[i],rest[j]]=[rest[j],rest[i]];}this.queue.push(...heavy,...rest);this.total=this.queue.length;}
+tick(dt:number,alive:number,active:number):WE[]{const out:WE[]=[];if(this.queue.length&&active<CAP){this.spawnT-=dt;if(this.spawnT<=0){this.spawnT=this.interval;out.push({type:'spawn',kind:this.queue.shift()!});}}
+if(!this.queue.length&&alive===0){if(!this.clearPaid){this.clearPaid=true;out.push({type:'waveClear',wave:this.wave});this.inter=this.gap;}else{this.inter-=dt;out.push({type:'intermission',t:Math.max(0,this.inter)});if(this.inter<=0)this.start(this.wave+1);}}return out;}
+early(){if(this.clearPaid&&!this.queue.length)this.inter=0;}
+private spawnT=0;private interval=1.0;}

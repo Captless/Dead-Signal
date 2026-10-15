@@ -1,0 +1,1 @@
+export interface DD{eDmg:number;eHp:number;eSpd:number;scrap:number}export const DF:Record<string,DD>={recruit:{eDmg:0.75,eHp:0.85,eSpd:0.9,scrap:1.25},standard:{eDmg:1,eHp:1,eSpd:1,scrap:1},containment:{eDmg:1.3,eHp:1.15,eSpd:1.05,scrap:0.9}};export type DK=keyof typeof DF;

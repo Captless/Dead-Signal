@@ -1,0 +1,1 @@
+export class PH{hp=100;max=100;dead=false;private g=0;hit(d:number){if(this.dead||this.g>0)return;this.hp-=d;this.g=0.5;if(this.hp<=0){this.hp=0;this.dead=true;}}tick(dt:number){if(this.g>0)this.g-=dt;}reset(){this.hp=this.max;this.dead=false;this.g=0;}}

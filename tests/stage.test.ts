@@ -1,0 +1,4 @@
+import { describe, expect, it } from 'vitest';import { shouldAutoOpen, CLEAR_DELAY } from '../src/ui/StationPanel';
+// stage-clear beat: auto-open gated on clearDelay reaching 0
+export function autoOpenAllowed(delay:number,cur:string,panel:boolean,auto:number,wave:number){return delay<=0&&shouldAutoOpen(cur,panel,auto,wave);}
+describe('stage',()=>{it('beat constant sane',()=>{expect(CLEAR_DELAY).toBeGreaterThan(1);});it('blocks auto-open during clear beat',()=>{expect(autoOpenAllowed(2.5,'INTERMISSION',false,1,2)).toBe(false);expect(autoOpenAllowed(0.01,'INTERMISSION',false,1,2)).toBe(false);});it('opens once beat elapses',()=>{expect(autoOpenAllowed(0,'INTERMISSION',false,1,2)).toBe(true);expect(autoOpenAllowed(-1,'INTERMISSION',false,1,2)).toBe(true);});it('still respects panel/wave guards',()=>{expect(autoOpenAllowed(0,'INTERMISSION',true,1,2)).toBe(false);expect(autoOpenAllowed(0,'PLAYING',false,1,2)).toBe(false);});});

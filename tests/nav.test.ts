@@ -1,0 +1,2 @@
+import { describe, expect, it } from 'vitest';import { Nav } from '../src/core/NavigationGrid';import { street } from '../src/world/StreetBuilder';
+describe('nav',()=>{it('spawns reach street midpoint',()=>{const s=street();const nav=new Nav(s.cw,s.nav.x0,s.nav.z0,1,s.nav.nx,s.nav.nz);for(const p of s.spawns){const path=nav.path(p.x,p.z,0,0);expect(path.length).toBeGreaterThan(0);}});it('player spawn free',()=>{const s=street();expect(new Nav(s.cw,s.nav.x0,s.nav.z0,1,s.nav.nx,s.nav.nz).free(s.player0.x,s.player0.z)).toBe(true);});});

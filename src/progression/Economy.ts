@@ -1,0 +1,1 @@
+export class Econ{scrap=0;add(n:number){this.scrap+=n;}can(c:number){return this.scrap>=c;}take(c:number){if(c<0||this.scrap<c)return false;this.scrap-=c;return true;}}
