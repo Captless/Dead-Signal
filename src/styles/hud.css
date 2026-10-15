@@ -73,3 +73,47 @@
 .st-card button.armed{background:#C84B45;color:#E8ECE7}
 .st-card button:disabled{background:#2A3638;color:#8A9894;cursor:default}
 .st-msg{min-height:20px;margin-top:12px;color:#F0C779;font-size:13px}
+.mm{display:flex;gap:0;max-width:1060px;margin:24px auto;min-height:72vh;background:#16090c;border:3px solid #C8102E;box-shadow:6px 6px 0 #000;font-family:"Arial Black","Arial Narrow",system-ui,sans-serif;text-transform:uppercase}
+.mm-rail{width:230px;flex:none;background:#1f0b0f;border-right:3px solid #C8102E;padding:20px 16px;display:flex;flex-direction:column;gap:8px}
+.mm-logo{color:#E8ECE7;font-size:38px;line-height:.95;letter-spacing:.04em;text-shadow:3px 3px 0 #C8102E}
+.mm-sub{color:#C8102E;font-size:12px;letter-spacing:.3em;margin-bottom:12px;border-bottom:3px dotted #C8102E;padding-bottom:12px}
+.mm-rail button{background:transparent;border:3px solid transparent;color:#B3BFBA;font:inherit;font-size:17px;letter-spacing:.14em;text-align:left;padding:10px 12px;cursor:pointer}
+.mm-rail button:hover{border-color:#C8102E;color:#E8ECE7}
+.mm-rail button.on{background:#C8102E;color:#fff;box-shadow:3px 3px 0 #000}
+.mm-gold{margin-top:auto;color:#F0C779;font-size:18px;letter-spacing:.1em}
+.mm-best{color:#788783;font-size:13px;letter-spacing:.14em}
+.mm-pane{flex:1;padding:22px 26px;overflow:auto}
+.mm-title{color:#E8ECE7;font-size:26px;letter-spacing:.2em;text-shadow:2px 2px 0 #C8102E;margin:6px 0 12px}
+.mm-sec{color:#F0786E;font-size:14px;letter-spacing:.26em;margin:18px 0 10px;border-bottom:2px solid #7a0c1e;padding-bottom:6px}
+.mm-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.mm-card{background:#221014;border:3px solid #7a0c1e;padding:12px;color:#E8ECE7}
+.mm-card.selcard{border-color:#F0C779;box-shadow:3px 3px 0 #000}
+.mm-gname{font-size:16px;letter-spacing:.08em}
+.mm-gsub{font-family:system-ui;font-size:12px;color:#B3BFBA;margin:4px 0;text-transform:none}
+.mm-price{color:#F0C779;font-size:15px;margin:6px 0}
+.mm-pips{color:#F0C779;font-size:13px;margin:6px 0;letter-spacing:.2em}
+.mm-card button{background:#C8102E;border:0;color:#fff;font:inherit;font-size:14px;letter-spacing:.1em;padding:9px 12px;cursor:pointer;width:100%}
+.mm-card button:hover:not(:disabled){background:#F03030}
+.mm-card button:disabled{background:#3a2226;color:#8A7878;cursor:default}
+.mm-slots{display:flex;gap:12px}
+.mm-slot{flex:1;background:#221014;border:3px dashed #7a0c1e;padding:12px;text-align:center;cursor:pointer;min-height:120px}
+.mm-slot:hover{border-color:#C8102E}
+.mm-slotlab{color:#F0786E;font-size:13px;letter-spacing:.24em;margin-bottom:8px}
+.mm-empty{color:#788783;font-size:13px;letter-spacing:.14em;padding:20px 0}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.mm-gun{background:#221014;border:3px solid #7a0c1e;padding:10px;text-align:center;cursor:pointer;color:#B3BFBA}
+.mm-gun:hover{border-color:#C8102E;color:#E8ECE7}
+.mm-gun.sel{border-color:#F0C779;color:#fff;box-shadow:3px 3px 0 #000}
+.mm-gun.eq{border-style:solid}
+.mm-icon{display:block;height:44px;color:#E8ECE7}
+.mm-icon svg{height:100%;width:100%}
+.mm-gunpic{height:52px;color:#F0C779}
+.mm-gunpic svg{height:100%;width:100%}
+.mm-badge{display:inline-block;background:#4E9C91;color:#0B1012;font-size:11px;letter-spacing:.2em;padding:2px 8px;margin-top:6px}
+.mm-go{background:#C8102E;border:0;color:#fff;font:inherit;font-size:20px;letter-spacing:.2em;padding:14px 40px;cursor:pointer;box-shadow:4px 4px 0 #000;margin-top:14px}
+.mm-go:hover{background:#F03030}
+.mm-threat{color:#F0786E;font-size:16px;letter-spacing:.1em}
+.mm-hint{font-family:system-ui;font-size:12px;color:#B3BFBA;text-transform:none}
+.mm-setwrap{max-width:420px}
+.mm-setwrap .setrow{color:#B3BFBA}
+.set-panel{border:3px solid #C8102E !important}
