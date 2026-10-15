@@ -1,5 +1,16 @@
 # DEAD SIGNAL — UI, Shop, and Loadout Implementation Plan
 
+> Reconciliation (branch `ui-shop-loadout`, on top of `meta-hub`): the meta-hub
+> rework already deleted the in-run Field Station (`StationPanel.ts` gone,
+> waves auto-deploy, scrap converts to gold 1:1, perks are 3 persistent player
+> perks, no weapon tiers). So this plan executes as: gun catalog metadata in
+> `src/config/weapons.ts` (stage/role/desc/order/side, single PRICE source);
+> command-screen menu + deployment brief in new `src/meta/MenuUI.ts`
+> (loadout recap + wave-1-only Threat Scan); hub SHOP in armory order with
+> sidegrade tags, NEED-N-MORE deficit labels, and a keep-confirm when both
+> carry slots are full; Emergency Cache deferred (ammo crates cover it);
+> balance verified via existing TTK bands (no changes needed).
+
 ## Purpose
 
 Redesign the main menu, Field Station shop, and in-run loadout around a clear **prepare → deploy → survive** loop. This plan is grounded in the repository’s current TypeScript, Three.js, DOM/CSS UI, run-scoped scrap economy, and three-slot inventory. It does not introduce a UI framework or change the local-first runtime model.
