@@ -4,3 +4,5 @@ export const heat=(recT:number,maxRise:number)=>maxRise<=0?0:Math.min(2,Math.max
 export const shakeAmp=(sa:number,h:number)=>sa*(1+2*h);
 export const bloom=(sp:number,h:number)=>sp*(1+1.5*h);
 export const swayDir=(n:number)=>Math.floor(n/3)%2?-1:1;
+// bloom ramp: shots 1-2 dead straight, widens from shot 3, resets on release
+export const ramp=(n:number)=>n<2?0:Math.min(1.5,(n-1)/4);
