@@ -1,0 +1,4 @@
+import { describe, expect, it } from 'vitest';import { blank, validMeta, upCost } from '../src/meta/profile';
+describe('meta',()=>{it('blank has pistol loadout',()=>{const m=blank();expect(m.load.side).toBe('pistol');expect(m.gold).toBe(0);expect(m.perks).toEqual([]);});
+it('rejects junk',()=>{const m=validMeta({gold:-5,owned:['pistol','nuke'],load:{side:'nuke',c1:'rifle',c2:null},perks:['dressing','x','scav','hands','scav'],up:{rifle:{d:9,m:1},nuke:{d:3,m:3}}});expect(m.gold).toBe(0);expect(m.owned).toEqual(['pistol']);expect(m.load.side).toBe('pistol');expect(m.load.c1).toBe(null);expect(m.perks).toEqual(['dressing','scav','hands']);expect(m.up.rifle).toEqual({d:0,m:1});expect(m.up.nuke).toBe(undefined);});
+it('upgrade costs rise',()=>{expect(upCost('rifle',0)).toBe(300);expect(upCost('rifle',2)).toBe(1000);expect(upCost('rifle',3)).toBe(0);});});
