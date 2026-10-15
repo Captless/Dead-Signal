@@ -18,13 +18,15 @@
 #h-res{color:#788783;font-weight:700;font-size:18px}
 #h-res::before{content:' ⁄ '}
 #h-slots{color:#B3BFBA;font-weight:700;font-size:12px;letter-spacing:.3em;text-shadow:0 1px 3px #000}
-#h-ret{position:absolute;left:50%;top:50%;width:0;height:0;--gap:6px}
+#h-ret{position:absolute;left:50%;top:50%;width:0;height:0;--gap:6px;--size:1;transform:scale(var(--size))}
 #h-ret i{position:absolute;background:#E8ECE7;box-shadow:0 0 3px #000,0 0 1px #000}
 #h-ret .t{left:-1.5px;top:calc(-11px - var(--gap));width:3px;height:11px}
 #h-ret .b{left:-1.5px;top:var(--gap);width:3px;height:11px}
 #h-ret .l{top:-1.5px;left:calc(-11px - var(--gap));height:3px;width:11px}
 #h-ret .r{top:-1.5px;left:var(--gap);height:3px;width:11px}
-#h-ret .c{left:-1.5px;top:-1.5px;width:3px;height:3px}
+#h-ret .dot{display:none;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%}
+#h-ret[data-mode='dot'] i{display:none}
+#h-ret[data-mode='dot'] .dot{display:block}
 #h-reload{display:none;position:absolute;left:50%;top:calc(50% + 64px);transform:translateX(-50%);text-align:center}
 #h-reload span{color:#F0C779;font-weight:800;font-size:18px;letter-spacing:.34em;text-shadow:0 1px 4px #000;animation:blink 1s infinite}
 #h-rbar{width:170px;height:4px;background:#ffffff22;margin:6px auto 0}
