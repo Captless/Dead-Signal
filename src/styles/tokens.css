@@ -1,1 +1,21 @@
-:root{--bg-950:#0B1012;--bg-900:#11191B;--bg-800:#1B2628;--line-700:#354346;--text-100:#E8ECE7;--text-300:#B3BFBA;--text-500:#788783;--amber-500:#D89A43;--amber-300:#F0C779;--red-500:#C84B45;--red-300:#F0786E;--teal-500:#4E9C91;--blue-500:#7295A8;--s4:4px;--s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;--s48:48px}
+:root{
+  /* surfaces */
+  --bg-950:#080b0d;--bg-900:#10151a;--bg-800:#161c22;--line-700:#2a333b;
+  --panel:rgba(12,16,20,.84);
+  --panel-2:rgba(255,255,255,.045);
+  --panel-3:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.09);
+  /* text */
+  --text-100:#eef2f5;--text-300:#9aa5ae;--text-500:#66707a;
+  --t1:#eef2f5;--t2:#9aa5ae;--t3:#66707a;
+  /* accents */
+  --acc:#e8452f;--acc-hi:#ff6a52;--gold:#f5c451;
+  --red-500:#e8452f;--red-300:#ff6a52;--teal-500:#4fb3a3;--blue-500:#7295a8;
+  --amber-500:#d89a43;--amber-300:#f0c779;
+  /* radii */
+  --r:10px;--r-sm:6px;--r-lg:16px;
+  /* spacing */
+  --s4:4px;--s8:8px;--s12:12px;--s16:16px;--s24:24px;--s32:32px;--s48:48px;
+  /* type */
+  --font:'Cascadia Mono','Cascadia Code',Consolas,'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Menlo,monospace;
+}

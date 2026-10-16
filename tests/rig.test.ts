@@ -1,3 +1,3 @@
-import { describe, expect, it } from 'vitest';import { drifter, rusher, brute, runner, crusher, stalker } from '../src/assets/zombieModels';
+import { describe, expect, it } from 'vitest';import { fallbackZombie } from '../src/assets/zombies/fallback';
 const PIV=['armL','armR','legL','legR','elbL','elbR','knL','knR','head','torso','jaw'];
-describe('rig',()=>{it('all builders expose every anim pivot',()=>{for(const b of [drifter,rusher,brute,runner,crusher,stalker]){const g=b(0);for(const k of PIV)expect(g.userData[k],'drifter-like '+k).toBeDefined();}});});
+describe('rig',()=>{it('preload fallback rig exposes every anim pivot',()=>{const g=fallbackZombie('brute',0);for(const k of PIV)expect(g.userData[k],'pivot '+k).toBeDefined();});});
