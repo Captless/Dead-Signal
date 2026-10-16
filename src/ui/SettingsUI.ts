@@ -1,5 +1,5 @@
 import { Sfx } from '../config/settings';
-export function settingsPanel(s:Sfx,apply:(s:Sfx)=>void,close:()=>void):HTMLDivElement{const d=document.createElement('div');d.className='set-panel';d.style.cssText='position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:340px;background:#11191B;border:1px solid #354346;color:#E8ECE7;font:13px system-ui;padding:16px;z-index:20';
+export function settingsPanel(s:Sfx,apply:(s:Sfx)=>void,close:()=>void):HTMLDivElement{const d=document.createElement('div');d.className='set-panel';
 d.innerHTML=settingsBody(s);bindSettings(d,s,apply);
 (d.querySelector('[data-a="ok"]') as HTMLButtonElement).onclick=close;(d.querySelector('[data-a="rs"]') as HTMLButtonElement).onclick=()=>{apply(null as unknown as Sfx);close();};return d;}
 // inline-embeddable settings (menu settings page). same rows, no overlay chrome.

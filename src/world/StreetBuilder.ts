@@ -36,6 +36,6 @@ const cratePts=[{x:-3.5,z:4},{x:3.5,z:-8}];const crateMeshes:T.Group[]=[];
 for(const p of cratePts){const ac=ammoCrate();ac.position.set(p.x,0,p.z);g.add(ac);walls.push(ac);col(p.x,p.z,1.3,0.9);crateMeshes.push(ac);}
 const s1=sign('SIGNAL PLAZA');s1.position.set(0,3.2,22.4);s1.rotation.y=Math.PI;g.add(s1);
 const s2=sign('QUARANTINE');s2.position.set(0,3.2,-22.4);g.add(s2);
-g.add(new T.HemisphereLight(0x8fa3b8,0x1a2222,1.5));const moon=new T.DirectionalLight(0x9fb8dd,1.1);moon.position.set(-8,20,-10);g.add(moon);
+g.add(new T.HemisphereLight(0x6b8296,0x0a0f10,0.5));const moon=new T.DirectionalLight(0xa8c0e0,1.35);moon.position.set(-8,20,-10);g.add(moon);
 const spawns=[{x:-19,z:-19},{x:19,z:-19},{x:-19,z:19},{x:19,z:19},{x:-19,z:0},{x:19,z:0},{x:0,z:-19},{x:0,z:19}];
-return{group:g,cw,walls,spawns,player0:{x:0,z:20},lamps,crates:cratePts,crateMeshes,fogNear:45,fogFar:130,solids,nav:{x0:-32,z0:-32,nx:64,nz:64}};}
+return{group:g,cw,walls,spawns,player0:{x:0,z:20},lamps,crates:cratePts,crateMeshes,fogColor:0x0b1012,fogNear:45,fogFar:130,solids,nav:{x0:-32,z0:-32,nx:64,nz:64}};}
