@@ -50,9 +50,16 @@
 .wrow.on .wbar i{background:#F0C779}
 .dmgnum{position:absolute;transform:translate(-50%,0);color:#F0C779;font-weight:800;font-size:20px;letter-spacing:.04em;pointer-events:none;text-shadow:0 0 4px #000,0 1px 2px #000}
 .dmgnum.head{font-size:25px;color:#FFD75E}
-.menu{max-width:560px;margin:0 auto;padding:48px 16px;text-align:center;color:#E8ECE7}.menu h1{letter-spacing:.2em}.menu button{background:#D89A43;border:0;padding:12px 24px;font-weight:700;cursor:pointer;margin:4px}.menu button:hover{background:#F0C779}.menu button:disabled{background:#354346;color:#788783;cursor:default}
+.menu{max-width:540px;margin:8vh auto;padding:34px 32px;color:#E8ECE7;background:#14090C;border:1px solid #3A2226;font-family:"Arial Narrow","Helvetica Neue",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.menu h1{font-size:26px;letter-spacing:.22em;margin:0 0 12px}
+.menu p{font-family:system-ui;text-transform:none;color:#9AA7A3;font-size:14px}
+.menu button{display:block;width:100%;background:transparent;border:1px solid #3A2226;color:#E8ECE7;padding:11px;font:inherit;font-size:14px;letter-spacing:.14em;cursor:pointer;margin:8px 0}
+.menu button:hover{border-color:#C8102E;color:#fff}
+.menu button:first-of-type{background:#C8102E;border-color:#C8102E;color:#fff}
+.menu button:first-of-type:hover{background:#E02030}
 .setrow{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:8px 0;color:#B3BFBA}.setrow input[type=range]{width:180px}
-.ov{position:fixed;inset:0;z-index:10;background:#0B1012d9;overflow:auto}
+.ov{position:fixed;inset:0;z-index:10;background:#0B1012d9;overflow:auto;cursor:default}
+.ov button{cursor:pointer}
 #tut{position:fixed;left:16px;top:64px;z-index:5;pointer-events:none;background:#11191Bcc;border:1px solid #354346;color:#B3BFBA;font:12px monospace;padding:8px 12px}#tut b{color:#F0C779}#tut .done{color:#4E9C91;text-decoration:line-through}
 .st-scrim{position:fixed;inset:0;z-index:6;background:rgba(11,16,18,.55);display:flex;align-items:center;justify-content:center}
 .st-panel{width:min(92vw,880px);max-height:88vh;overflow:auto;background:#0B1012f5;border:1px solid #4A5A5E;border-top:4px solid #D89A43;color:#E8ECE7;font-family:'Arial Narrow',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:20px 24px;box-shadow:0 8px 40px #000}
@@ -73,47 +80,54 @@
 .st-card button.armed{background:#C84B45;color:#E8ECE7}
 .st-card button:disabled{background:#2A3638;color:#8A9894;cursor:default}
 .st-msg{min-height:20px;margin-top:12px;color:#F0C779;font-size:13px}
-.mm{display:flex;gap:0;max-width:1060px;margin:24px auto;min-height:72vh;background:#16090c;border:3px solid #C8102E;box-shadow:6px 6px 0 #000;font-family:"Arial Black","Arial Narrow",system-ui,sans-serif;text-transform:uppercase}
-.mm-rail{width:230px;flex:none;background:#1f0b0f;border-right:3px solid #C8102E;padding:20px 16px;display:flex;flex-direction:column;gap:8px}
-.mm-logo{color:#E8ECE7;font-size:38px;line-height:.95;letter-spacing:.04em;text-shadow:3px 3px 0 #C8102E}
-.mm-sub{color:#C8102E;font-size:12px;letter-spacing:.3em;margin-bottom:12px;border-bottom:3px dotted #C8102E;padding-bottom:12px}
-.mm-rail button{background:transparent;border:3px solid transparent;color:#B3BFBA;font:inherit;font-size:17px;letter-spacing:.14em;text-align:left;padding:10px 12px;cursor:pointer}
-.mm-rail button:hover{border-color:#C8102E;color:#E8ECE7}
-.mm-rail button.on{background:#C8102E;color:#fff;box-shadow:3px 3px 0 #000}
-.mm-gold{margin-top:auto;color:#F0C779;font-size:18px;letter-spacing:.1em}
-.mm-best{color:#788783;font-size:13px;letter-spacing:.14em}
-.mm-pane{flex:1;padding:22px 26px;overflow:auto}
-.mm-title{color:#E8ECE7;font-size:26px;letter-spacing:.2em;text-shadow:2px 2px 0 #C8102E;margin:6px 0 12px}
-.mm-sec{color:#F0786E;font-size:14px;letter-spacing:.26em;margin:18px 0 10px;border-bottom:2px solid #7a0c1e;padding-bottom:6px}
-.mm-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.mm-card{background:#221014;border:3px solid #7a0c1e;padding:12px;color:#E8ECE7}
-.mm-card.selcard{border-color:#F0C779;box-shadow:3px 3px 0 #000}
+.mm{display:flex;min-height:100dvh;background:#14090C;color:#E8ECE7;font-family:"Arial Narrow","Helvetica Neue",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.mm-rail{width:250px;flex:none;height:100dvh;position:sticky;top:0;padding:30px 22px;display:flex;flex-direction:column;gap:2px;border-right:1px solid #3A2226}
+.mm-logo{font-size:34px;line-height:1;letter-spacing:.06em}
+.mm-sub{color:#C8102E;font-size:11px;letter-spacing:.32em;margin:10px 0 22px;padding-bottom:16px;border-bottom:1px solid #3A2226}
+.mm-rail button{background:none;border:0;border-left:2px solid transparent;color:#9AA7A3;font:inherit;font-size:15px;letter-spacing:.16em;text-align:left;padding:10px 12px;cursor:pointer}
+.mm-rail button:hover{color:#E8ECE7}
+.mm-rail button.on{border-left-color:#C8102E;color:#fff;background:#ffffff08}
+.mm-gold{margin-top:auto;color:#F0C779;font-size:17px;letter-spacing:.1em}
+.mm-pane{flex:1;max-width:880px;padding:34px 38px;overflow:auto}
+.mm-title{font-size:28px;letter-spacing:.2em;margin:4px 0 6px}
+.mm-sec{color:#9AA7A3;font-size:12px;letter-spacing:.3em;margin:26px 0 12px;padding-bottom:8px;border-bottom:1px solid #3A2226}
+.mm-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.mm-card{border:1px solid #3A2226;padding:14px}
+.mm-card.selcard{border-color:#C8102E}
 .mm-gname{font-size:16px;letter-spacing:.08em}
-.mm-gsub{font-family:system-ui;font-size:12px;color:#B3BFBA;margin:4px 0;text-transform:none}
-.mm-price{color:#F0C779;font-size:15px;margin:6px 0}
+.mm-gsub{font-family:system-ui;font-size:12px;color:#9AA7A3;margin:4px 0;text-transform:none}
+.mm-price{color:#F0C779;font-size:15px;margin:8px 0}
 .mm-pips{color:#F0C779;font-size:13px;margin:6px 0;letter-spacing:.2em}
-.mm-card button{background:#C8102E;border:0;color:#fff;font:inherit;font-size:14px;letter-spacing:.1em;padding:9px 12px;cursor:pointer;width:100%}
-.mm-card button:hover:not(:disabled){background:#F03030}
-.mm-card button:disabled{background:#3a2226;color:#8A7878;cursor:default}
-.mm-slots{display:flex;gap:12px}
-.mm-slot{flex:1;background:#221014;border:3px dashed #7a0c1e;padding:12px;text-align:center;cursor:pointer;min-height:120px}
+.mm-card button{margin-top:10px;background:#C8102E;border:0;color:#fff;font:inherit;font-size:13px;letter-spacing:.12em;padding:10px;cursor:pointer;width:100%}
+.mm-card button:hover:not(:disabled){background:#E02030}
+.mm-card button:disabled{background:transparent;border:1px solid #3A2226;color:#5A6663;cursor:default}
+.mm-slots{display:flex;gap:10px}
+.mm-slot{flex:1;border:1px dashed #4A2B30;padding:14px;text-align:center;cursor:pointer;min-height:120px}
 .mm-slot:hover{border-color:#C8102E}
-.mm-slotlab{color:#F0786E;font-size:13px;letter-spacing:.24em;margin-bottom:8px}
-.mm-empty{color:#788783;font-size:13px;letter-spacing:.14em;padding:20px 0}
+.mm-slotlab{color:#9AA7A3;font-size:12px;letter-spacing:.26em;margin-bottom:8px}
+.mm-empty{color:#5A6663;font-size:13px;letter-spacing:.14em;padding:20px 0}
 .mm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.mm-gun{background:#221014;border:3px solid #7a0c1e;padding:10px;text-align:center;cursor:pointer;color:#B3BFBA}
+.mm-gun{border:1px solid #3A2226;padding:10px;text-align:center;cursor:pointer;color:#9AA7A3}
 .mm-gun:hover{border-color:#C8102E;color:#E8ECE7}
-.mm-gun.sel{border-color:#F0C779;color:#fff;box-shadow:3px 3px 0 #000}
-.mm-gun.eq{border-style:solid}
+.mm-gun.sel{border-color:#F0C779;color:#fff}
 .mm-icon{display:block;height:44px;color:#E8ECE7}
 .mm-icon svg{height:100%;width:100%}
 .mm-gunpic{height:52px;color:#F0C779}
 .mm-gunpic svg{height:100%;width:100%}
 .mm-badge{display:inline-block;background:#4E9C91;color:#0B1012;font-size:11px;letter-spacing:.2em;padding:2px 8px;margin-top:6px}
-.mm-go{background:#C8102E;border:0;color:#fff;font:inherit;font-size:20px;letter-spacing:.2em;padding:14px 40px;cursor:pointer;box-shadow:4px 4px 0 #000;margin-top:14px}
-.mm-go:hover{background:#F03030}
-.mm-threat{color:#F0786E;font-size:16px;letter-spacing:.1em}
-.mm-hint{font-family:system-ui;font-size:12px;color:#B3BFBA;text-transform:none}
+.mm-go{margin-top:18px;background:#C8102E;border:0;color:#fff;font:inherit;font-size:18px;letter-spacing:.22em;padding:14px 44px;cursor:pointer}
+.mm-go:hover{background:#E02030}
+.mm-threat{color:#E4574F;font-size:16px;letter-spacing:.1em}
+.mm-hint{font-family:system-ui;font-size:12px;color:#9AA7A3;text-transform:none}
+.mm-row{display:flex;align-items:center;gap:12px;border:1px solid #3A2226;padding:8px 12px;margin-bottom:8px}
+.mm-row .mm-gunpic{height:34px;width:84px;flex:none}
+.mm-rowmain{flex:1;min-width:0}
+.mm-row .mm-price{margin:0;white-space:nowrap}
+.mm-row button{width:auto;flex:none;margin:0;background:#C8102E;border:0;color:#fff;font:inherit;font-size:13px;letter-spacing:.1em;padding:9px 18px;cursor:pointer}
+.mm-row button:hover:not(:disabled){background:#E02030}
+.mm-row button:disabled{background:transparent;border:1px solid #3A2226;color:#5A6663;cursor:default}
+.mm-slot.act{border-color:#C8102E;border-style:solid}
 .mm-setwrap{max-width:420px}
+.mm-setwrap h3{display:none}
 .mm-setwrap .setrow{color:#B3BFBA}
-.set-panel{border:3px solid #C8102E !important}
+.set-panel{border:1px solid #3A2226 !important}
